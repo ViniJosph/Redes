@@ -1,55 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-br   ">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title>HTTP</title>
 </head>
 
-<body>
-    <section>
-        <h1>Primeiramente oque é HTTP?</h1>
-        <p>HTTP é a sigla de Hypertext Transfer Protocol, ou seja, Transferência de Hipertexto. Esse sistema é a base
+<body class="mt-5">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">O que é HTTP?</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#componente">Componentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#como">Funcionamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cookie">Cookies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cors">Cors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#autenticação">Autenticação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cache">Cache</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#range">HTTP range requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#redirecionameto">Redirecionamento HTTP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cabeçalho">Cabeçalho HTTP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#security">CSP</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="text-center"> Primeiramente oque é HTTP?</h1>
+        <p class="text-justify"> HTTP é a sigla de Hypertext Transfer Protocol, ou seja, Transferência de Hipertexto.
+            Esse sistema é a base
             da comunicação que existe em toda a Internet em que os sites e conteúdos que tragam hiperlinks possam ser
             encontrados mais facilmente pelo público por meio de um clique do mouse ou um toque na tela.</p>
-        <p>Qualquer servidor que você escolha para hospedar o site da sua empresa tem um programa projetado para
+        <p class="text-justify">Qualquer servidor que você escolha para hospedar o site da sua empresa tem um programa
+            projetado para
             receber solicitações HTTP. Portanto, o navegador que você usa é um cliente HTTP que envia solicitações
             constantemente ao seu servidor.</p>
-        <p>Assim, quando um usuário acessa ou digita a URL do seu site, o navegador cria uma solicitação HTTP e a
+        <p class="text-justify">Assim, quando um usuário acessa ou digita a URL do seu site, o navegador cria uma
+            solicitação HTTP e a
             envia ao endereço de IP indicado pela URL. Dessa forma, o servidor recebe essa solicitação e envia os
             arquivos associados que, nada mais são, do que os sites que acessamos na Internet.</p>
-    </section>
-    <section>
-        <h2>Componentes de sistemas baseados em HTTP</h2>
-        <p>O HTTP é um protocolo cliente-servidor: as requisições são enviados por uma entidade, o agente-usuário (ou
+
+        <h2 class="text-center"> <a name="componente"> Componentes de sistemas baseados em HTTP </a></h2>
+        <p class="text-justify">O HTTP é um protocolo cliente-servidor: as requisições são enviados por uma entidade, o
+            agente-usuário (ou
             um proxy em nome dele). A maior parte do tempo, o agente-usuário é um navegador da Web, mas pode ser
             qualquer coisa, como por exemplo um robô que rastreia a Web para preencher e manter um índice de mecanismo
             de pesquisa.</p>
-        <p>Cada requisição individual é enviada para um servidor, que irá lidar com isso e fornecer um resultado,
+        <p class="text-justify">Cada requisição individual é enviada para um servidor, que irá lidar com isso e fornecer
+            um resultado,
             chamado de resposta. Entre a solicitação e a resposta existem várias entidades, designadas coletivamente
             como proxies, que executam operações diferentes e atuam como gateways (intermediários) ou caches, por
             exemplo.</p>
-        <p>Na realidade, existem muitos outros computadores entre o navegador e o servidor que está tratando a
+        <p class="text-justify">Na realidade, existem muitos outros computadores entre o navegador e o servidor que está
+            tratando a
             requisição: existem roteadores, modems e muito mais. Graças ao modelo de camadas da Web (layers), essas
             funcionalidades estão escondidas nas camadas de rede e transporte, respectivamente. O HTTP está no topo da
             camada de aplicação. Apesar de ser importante diagnosticar problemas de conectividade, os layers abaixo da
             camada de aplicação são irrelevantes para a descrição do HTTP.</p>
-    </section>
-    <section>
-        <h2>Como é o funcionamento do HTTP?</h2>
-        <p>HTTP é um protocolo baseado em texto sem conexão. Isso significa que as pessoas que acessam o site da sua
+
+        <h2 class="text-center">
+            <p class="text-justify">
+
+            </p>
+        </h2>
+
+        <h2 class="text-center"> <a name="como"> Como é o funcionamento do HTTP? </a> </h2>
+        <p class="text-justify">HTTP é um protocolo baseado em texto sem conexão. Isso significa que as pessoas que
+            acessam o site da sua
             empresa enviam solicitações a servidores que as exibem na forma do seu site em formato de texto, imagens, e
             outros tipos de mídia. Depois que a solicitação é atendida por um servidor, a conexão entre o usuário e o
             servidor é desconectada.
         </p>
-        <p>
+        <p class="text-justify">
             Uma nova conexão deve ser feita para cada solicitação, isto é, cada vez que alguém acessa o seu site. Em
             suma, quando alguém digita a URL do seu site em um navegador, é isto que acontece:
         </p>
-        <ol>
+        <ul>
             <li>se a URL pertencer a um domínio próprio, o navegador primeiro se conecta a um servidor e recuperará o
                 endereço IP correspondente ao servidor;</li>
             <li>o navegador se conecta ao servidor e envia uma solicitação HTTP para a página da web desejada (que,
@@ -68,11 +125,231 @@
             <li>quando o navegador terminar de carregar todos os elementos, a página será carregada na janela do
                 navegador.
             </li>
-        </ol>        
-    </section>
-    <section>
-        
-    </section>
+        </ul>
+
+        <h2 class="text-center"> <a name="cookie"> Cookies HTTP </a></h2>
+        <p class="text-justify">O funcionamento dos cookies é definido pela RFC 6265. Ao receber uma requisição HTTP, o
+            servidor pode enviar
+            um cabeçalho Set-Cookie com a resposta. Depois, o cliente retorna o valor do cookie a cada requisição ao
+            mesmo servidor na form a de um cabeçalho Cookie HTTP. O cookie também pode ser configurado para expirar em
+            um
+            determinado tempo ou permanecer restrito a um domínio ou endereço específicos.
+        </p>
+        <section>
+            <p class="text-justify">
+                Um cookie HTTP (um cookie web ou cookie de browser) é um pequeno fragmento de dados que um servidor
+                envia
+                para o navegador do usuário. O navegador pode então armazenar estes dados e enviá-los de volta com a
+                próxima
+                requisição para o mesmo servidor. Normalmente é utilizado para identificar se duas requisições vieram do
+                mesmo navegador — ao manter um usuário logado, por exemplo. Ele guarda informações dinâmicas para o
+                protocolo HTTP sem estado.
+            </p>
+            <p class="text-justify">Cookies são usados principalmente para três propósitos:</p>
+            <h3>Gerenciamento de sessão</h3>
+            <p>
+                Logins, carrinhos de compra, placar de games ou qualquer outra atividade que deva ser guardada por um
+                servidor.
+            </p>
+            <h3>Personalização</h3>
+            <p>
+                Preferências de usuário, temas e outras configurações.
+            </p>
+            <h3>Rastreamento</h3>
+            <p>
+                Gravação e análise do comportamento de um usuário.
+
+            </p>
+        </section>
+
+        <h2 class="text-center"> <a name="cors">Controle de Acesso HTTP (CORS)</a></h2>
+        <p class="text-justify">
+            CORS - Cross-Origin Resource Sharing (Compartilhamento de recursos com origens diferentes) é um mecanismo
+            que usa cabeçalhos adicionais HTTP para informar a um navegador que permita que um aplicativo Web seja
+            executado em uma origem (domínio) com permissão para acessar recursos selecionados de um servidor em uma
+            origem distinta. Um aplicativo Web executa uma requisição cross-origin HTTP ao solicitar um recurso que
+            tenha uma origem diferente (domínio, protocolo e porta) da sua própria origem.
+        </p>
+        <p class="text-justify">
+            Um exemplo de requisição cross-origin: o código JavaScript frontend de um aplicativo web em um servidor
+            http://domain-a.com usa XMLHttpRequest para fazer uma requisição em http://api.domain-b.com/data.json.
+        </p>
+        <p class="text-justify">
+            Por motivos de segurança, navegadores restringem requisições cross-origin HTTP a partir de scripts. Por
+            exemplo, XMLHttpRequest e Fetch API seguem a política de mesma origem (same-origin policy). Assim, um
+            aplicativo web que faz uso dessas APIs só poderá fazer requisições HTTP da mesma origem da qual o aplicativo
+            foi carregado, a menos que a resposta da outra origem inclua os cabeçalhos CORS corretos.
+        </p>
+        <h2 class="text-center"> <a name="autenticação"> Autenticação HTTP </a></h2>
+        <p class="text-justify">
+            O HTTP fornece uma estrutura geral para controle de acesso e autenticação. A autenticação HTTP mais comum é
+            fundamentada no esquema "Basic". Esta página introduz a estrutura HTTP para autenticação e mostra como
+            restringir acesso ao seu servidor usando o esquema "Basic".
+        </p>
+        <h3 class="text-center">A estrutura geral de autenticação HTTP</h3>
+        <p class="text-justify"> RFC 7235 define a estrutura de autenticação HTTP que pode ser usada por um servidor
+            para definir uma solicitação ("challenge") do cliente e para um cliente fornecer informações de
+            autenticação. A pergunta e resposta segue um caminho como esse: O servidor responde ao cliente com uma
+            mensagem do tipo 401 (Não autorizado) e fornece informações de como autorizar com um cabeçalho de resposta
+            WWW-Authenticate contendo ao menos uma solicitação. Um cliente que deseja autenticar-se com um servidor pode
+            fazer isso incluindo um campo de cabeçalho de solicitação WWW-Authenticate com as credenciais. Usualmente um
+            cliente apresentará uma solicitação de senha ao usuário e, em seguida, emitirá uma solicitação incluindo o
+            cabeçalho Authorization correto.
+        </p>
+
+        <h2 class="text-center"> <a name="cache"> Cache HTTP </a></h2>
+        <p class="text-justify">O Cache é muito importante para websites rápidos. Este artigo descreve diferentes
+            métodos de cache e como utilizar os cabeçalhos HTTP para controlá-los.
+        </p>
+        <p class="text-justify">A performance de websites e aplicações podem ser melhoradas significativamente ao reusar
+            recursos previamente buscados. Caches em web reduzem latência e o tráfego de rede e assim diminuir o tempo
+            necesário para exibir uma representação do recurso. Ao usar caching em HTTP, websites se tornam mais
+            responsivos.
+        </p>
+        <h3 class="text-center">Diferentes tipos de caches</h3>
+        <p class="text-justify">
+            Caching é uma técnica que guarda uma cópia de dado recurso e mostra de volta quando requisitado. Quando um
+            web cache tem um recurso requerido em seu armazenamento, ele intercepta a solicitação e retorna sua cópia ao
+            invés de fazer o download novamente do servidor original. Isto alcança vários objetivos: facilita o
+            balanceamento do servidor que não precisa servir todos os clients sozinho, e melhora a performance por estar
+            próximo do client, por exemplo, ele leva menos tempo para transmitir o recurso de volta. Para um website, é
+            um componente principal para alcançar alta performance. De outro lado, ele deve ser configurado devidamente
+            pois não são todos os recursos que ficam idênticos para sempre: é importante colocar um recurso em cache
+            somente até que ele mude, não mais que isso.
+
+            Há muitos tipos de caches: estes podem ser agrupados em duas categorias principais, caches privados ou
+            compartilhados. Um cache compartilhado é um cache que armazena respostas para serem reusadas por mais de um
+            usuário. Um cache privado é dedicado a um único usuário. Esta página irá falar principalmente sobre caches
+            em navegadores e em proxy, mas há também caches de gateway, CDN, cache de proxy reverso e balanceadores de
+            carga (load balancers) que são implantados em servers da web para melhor confiabilidade, desempenho e
+            dimensionamento de sites e aplicativos da web.
+        </p>
+        <h3>Caches privados de browser</h3>
+        <p class="text-justify">
+            Um cache privado é dedicado para um único usuário. Você já pode ter visto "caching" nas configurações de seu
+            navegador. Um cache de browser guarda todos os documentos que foram baixados via HTTP pelo usuário. Este
+            cache é usado para tornar disponíveis documentos visitados para navegação "para frente e para trás" (ou
+            back/forward, em Inglês), salvar, ver como fonte, etc. sem exigir uma viagem para o servidor. Também melhora
+            a navegação offline de conteúdo em cache.
+        </p>
+        <h3>Caches de proxy compartilhada </h3>
+        <p class="text-justify">
+            Uma cache compartilhada é uma cache que armazena respostas para serem reusadas por mais de um usuário. Por
+            exemplo, um fornecedor de acesso à internet ou sua empresa pode ter definido uma web proxy como parte de sua
+            infraestrutura de rede local para servir muitos usuários para que recursos populares sejam reusados
+            numerosas vezes, reduzindo o tráfego de rede e latência.
+        </p>
+
+        <h2 class="text-center"> <a name="range"> HTTP range requests</a> </h2>
+        <p class="text-justify">
+            Requisições de intervalo HTTP permite enviar uma parte de uma mensagem HTTP do servidor para o cliente.
+            Requisições de intervalo é útil quando usadas em mídias grandes ou em download de arquivos com funções de
+            pausa e retomada.
+        </p>
+        <h2 class="text-center"> <a name="redirecionameto"> Redirecionamentos em HTTP</a></h2>
+        <p class="text-justify">
+            Redirecionamento de URL, também conhecido como encaminhamento de URL, é uma técnica que à uma página,
+            formulário ou uma aplicação web inteira, mais de um endereço de URL. HTTP fornece uma espécie especial de
+            respostas, HTTP redirects, executar esta operação é utilizada para vários objetivos: redirecionamento
+            temporário enquanto está sendo feita a manutenção do web site, redirecionamento permanente para manter links
+            externos funcionando após alterações na arquitetura do web site, páginas de progresso enquanto é feito o
+            envio de um arquivo, e assim por diante.
+        </p>
+        <h2 class="text-center"> <a name="cabeçalho"> Cabeçalhos HTTP</a></h2>
+        <p class="text-justify">
+            Os cabeçalhos HTTP permitem que o cliente e o servidor passem informações adicionais com a solicitação ou a
+            resposta HTTP. Um cabeçalho de solicitação é composto por seu nome case-insensitive (não diferencia letras
+            maiúsculas e minúsculas), seguido por dois pontos ':' e pelo seu valor (sem quebras de linha). Espaços em
+            branco antes do valor serão ignorados.
+        </p>
+        <p class="text-justify">
+            Cabeçalhos proprietários personalizados podem ser adicionados usando o prefixo 'X-', mas essa convenção foi
+            depreciada em Junho de 2012, devido aos inconvenientes que causou quando os campos não-padronizados
+            tornaram-se padronizados na RFC 6648; outros estão listados em um registro IANA, cujo o conteúdo original
+            foi definido na RFC 4229. O IANA também mantém o registro das propostas de novas mensagens de cabeçalhos
+            HTTP.
+        </p>
+        <ul>
+            <p class="text-justify">
+                Cabeçalhos podem ser classificados de acordo com os seus contextos:
+            </p>
+            <li class="text-justify">
+                <strong> Cabeçalho genérico:</strong> Cabeçalhos que podem ser usados tanto em solicitações quanto em
+                respostas, porém sem
+                relação com os dados eventualmente transmitidos no corpo da mensagem.
+            </li>
+            <li class="text-justify">
+                <strong>Cabeçalho de solicitação:</strong> Cabeçalhos contendo mais informação sobre o recurso a ser
+                obtido ou sobre o
+                próprio cliente.
+            </li>
+            <li class="text-justify">
+                <strong>Cabeçalho de resposta: </strong> Cabeçalhos contendo informação adicional sobre a solicitação,
+                como a sua
+                localização ou sobre o servidor.
+            </li>
+            <li class="text-justify">
+                <strong>Cabeçalho de entidade:</strong> Cabeçalhos contendo mais informação sobre o conteúdo da
+                entidade, como o tamanho
+                do conteúdo ou o seu MIME-type.
+            </li>
+        </ul>
+
+        <h2 class="text-center"> <a name="security"> Content Security Policy (CSP)</a></h2>
+        <p class="text-justify">
+            Content Security Policy (Política de Segurança de Conteúdo, também conhecida como CSP) é uma camada
+            adicional de seguranção que facilita a detecção e mitigação de certos tipos de ataques, incluindo Cross Site
+            Scripting (XSS) e ataques de injeção de dados. Esses ataques são utilizados para diversos fins, e eles vão
+            desde roubou de dados até desfiguração do site até distribuição de malware.
+        </p>
+        <p class="text-justify">O CSP foi projetado para ser totalmente compatível retroatívelmente (come exceção da
+            versão 2 do CSP conde
+            existem algumas inconsistências explicitamente mencionadas com compatibilidade retroativa; mais detalhes
+            podem ser encontrados aqui na seção 1.1). Os navegadores que não possuem suporte para o CSP ainda irão
+            funcionar com servidores que o implementarem, e vice-versa: navegeadores que não fornecem suporte podem
+            simplesmente ignora-lo, funcionando normalmente, utilizando a norma padrão de same-origin policy (política
+            de mesma origem) para conteúdo web. Se o site não oferecer o cabeçaho CSP, os navegadores também utilizam a
+            política de same-origin.</p>
+
+        <h2 class="text-center"> Ameaças</h2>
+        <h3> Mitigando cross site scripting</h3>
+        <p class="text-justify">
+            Um objetivo primário do CSP é de mitigar e reportar ataques XSS. Os ataques de XSS exploram a confiaça do
+            navegador sobre o conteúdo recebido pelo servidor. Scripts maliciosos são executados pelo navegador da
+            vítima porque o navegador confia na origem do conteúdo, mesmo quando sua origem não está vindo de onde
+            parece que está vindo.
+        </p>
+        <p class="text-justify">
+            O CSP faz com que seja possível para administradores de servidores reduzirem ou eliminarem os vetores em que
+            os ataques de XSS podem ocorrer, especificando os domínios que o navegador deve considerar como origens
+            válidas de scripts para serem executados. Um navegador comátivel com o CSP só irá executar então scripts que
+            vierem de arquivos que estejam presentes nos domínios que foram previamente especificados como confiáveis,
+            ignorando todos os outros scripts (incluindo scripts inline e atributos HTML de manipulação de eventos).
+        </p>
+        <p class="text-justify">
+            Como uma forma de proteção final, os sites que querem nunca permitir a execução de scripts podem optar para
+            desabilitar a execução globalmente.
+        </p>
+        <h3>Mitigando ataques de captura de pacotes</h3>
+        <p class="text-justify">
+            Além da restrição de domínios deonde o conteúdo pode ser carregado, o servidor consegue especificar quais
+            protocolos estão habilitados para utilização; por exemplo (e literalmente, de um ponto de vista de
+            segurança), um servidor pode especificar que todo conteúdo deve ser carregando utilizando HTTPS. Uma
+            estratégia completa de transmissão de dados segura inclui não só impor o protocolo HTTPS para transferência
+            de dados, mas também marcar todos os cookies com a secure flag e prover redirecionamentos automáticos de
+            páginas HTTP para suas versões HTTPS. Os sites também podem utilizar o cabeçalho Strict-Transport-Security
+            para garantir que os navegadores se conectem neles apenas usando um canal criptografado.
+        </p>
+        <h2 class="text-center">Utilizando o CSP</h2>
+        <p>
+            Configurar uma Política de Segurança de Conteúdo envolve adicionar o header HTTP Content-Security-Policy a
+            uma página web e adicionar valores para controlar recursos que o user-agent é habilitado para carregar para
+            aquela página. Por exemplo, uma página que faz o upload e exibe imagens poderia permitir imagens de qualquer
+            lugar, mas restringir um form action de um end point específico. Uma política de segurança de conteúdo
+            devidamente concebida ajuda a proteger a página contra ataques do tipo cross site scripting.
+        </p>
+
+    </main>
 </body>
 
 </html>
