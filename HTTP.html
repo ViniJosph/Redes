@@ -23,6 +23,9 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="reqrest.html">ReqRest</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#componente">Componentes</a>
                     </li>
                     <li class="nav-item">
@@ -77,12 +80,14 @@
             um proxy em nome dele). A maior parte do tempo, o agente-usuário é um navegador da Web, mas pode ser
             qualquer coisa, como por exemplo um robô que rastreia a Web para preencher e manter um índice de mecanismo
             de pesquisa.</p>
-        <p class="text-justify">Cada requisição individual é enviada para um servidor, que irá lidar com isso e fornecer
+        <p class="text-justify">Cada requisição individual é enviada para um servidor, que irá lidar com isso e
+            fornecer
             um resultado,
             chamado de resposta. Entre a solicitação e a resposta existem várias entidades, designadas coletivamente
             como proxies, que executam operações diferentes e atuam como gateways (intermediários) ou caches, por
             exemplo.</p>
-        <p class="text-justify">Na realidade, existem muitos outros computadores entre o navegador e o servidor que está
+        <p class="text-justify">Na realidade, existem muitos outros computadores entre o navegador e o servidor que
+            está
             tratando a
             requisição: existem roteadores, modems e muito mais. Graças ao modelo de camadas da Web (layers), essas
             funcionalidades estão escondidas nas camadas de rede e transporte, respectivamente. O HTTP está no topo da
@@ -141,7 +146,8 @@
                 envia
                 para o navegador do usuário. O navegador pode então armazenar estes dados e enviá-los de volta com a
                 próxima
-                requisição para o mesmo servidor. Normalmente é utilizado para identificar se duas requisições vieram do
+                requisição para o mesmo servidor. Normalmente é utilizado para identificar se duas requisições vieram
+                do
                 mesmo navegador — ao manter um usuário logado, por exemplo. Ele guarda informações dinâmicas para o
                 protocolo HTTP sem estado.
             </p>
@@ -177,7 +183,8 @@
         <p class="text-justify">
             Por motivos de segurança, navegadores restringem requisições cross-origin HTTP a partir de scripts. Por
             exemplo, XMLHttpRequest e Fetch API seguem a política de mesma origem (same-origin policy). Assim, um
-            aplicativo web que faz uso dessas APIs só poderá fazer requisições HTTP da mesma origem da qual o aplicativo
+            aplicativo web que faz uso dessas APIs só poderá fazer requisições HTTP da mesma origem da qual o
+            aplicativo
             foi carregado, a menos que a resposta da outra origem inclua os cabeçalhos CORS corretos.
         </p>
         <h2 class="text-center"> <a name="autenticação"> Autenticação HTTP </a></h2>
@@ -191,8 +198,10 @@
             para definir uma solicitação ("challenge") do cliente e para um cliente fornecer informações de
             autenticação. A pergunta e resposta segue um caminho como esse: O servidor responde ao cliente com uma
             mensagem do tipo 401 (Não autorizado) e fornece informações de como autorizar com um cabeçalho de resposta
-            WWW-Authenticate contendo ao menos uma solicitação. Um cliente que deseja autenticar-se com um servidor pode
-            fazer isso incluindo um campo de cabeçalho de solicitação WWW-Authenticate com as credenciais. Usualmente um
+            WWW-Authenticate contendo ao menos uma solicitação. Um cliente que deseja autenticar-se com um servidor
+            pode
+            fazer isso incluindo um campo de cabeçalho de solicitação WWW-Authenticate com as credenciais. Usualmente
+            um
             cliente apresentará uma solicitação de senha ao usuário e, em seguida, emitirá uma solicitação incluindo o
             cabeçalho Authorization correto.
         </p>
@@ -201,7 +210,8 @@
         <p class="text-justify">O Cache é muito importante para websites rápidos. Este artigo descreve diferentes
             métodos de cache e como utilizar os cabeçalhos HTTP para controlá-los.
         </p>
-        <p class="text-justify">A performance de websites e aplicações podem ser melhoradas significativamente ao reusar
+        <p class="text-justify">A performance de websites e aplicações podem ser melhoradas significativamente ao
+            reusar
             recursos previamente buscados. Caches em web reduzem latência e o tráfego de rede e assim diminuir o tempo
             necesário para exibir uma representação do recurso. Ao usar caching em HTTP, websites se tornam mais
             responsivos.
@@ -209,9 +219,11 @@
         <h3 class="text-center">Diferentes tipos de caches</h3>
         <p class="text-justify">
             Caching é uma técnica que guarda uma cópia de dado recurso e mostra de volta quando requisitado. Quando um
-            web cache tem um recurso requerido em seu armazenamento, ele intercepta a solicitação e retorna sua cópia ao
+            web cache tem um recurso requerido em seu armazenamento, ele intercepta a solicitação e retorna sua cópia
+            ao
             invés de fazer o download novamente do servidor original. Isto alcança vários objetivos: facilita o
-            balanceamento do servidor que não precisa servir todos os clients sozinho, e melhora a performance por estar
+            balanceamento do servidor que não precisa servir todos os clients sozinho, e melhora a performance por
+            estar
             próximo do client, por exemplo, ele leva menos tempo para transmitir o recurso de volta. Para um website, é
             um componente principal para alcançar alta performance. De outro lado, ele deve ser configurado devidamente
             pois não são todos os recursos que ficam idênticos para sempre: é importante colocar um recurso em cache
@@ -226,16 +238,19 @@
         </p>
         <h3>Caches privados de browser</h3>
         <p class="text-justify">
-            Um cache privado é dedicado para um único usuário. Você já pode ter visto "caching" nas configurações de seu
+            Um cache privado é dedicado para um único usuário. Você já pode ter visto "caching" nas configurações de
+            seu
             navegador. Um cache de browser guarda todos os documentos que foram baixados via HTTP pelo usuário. Este
             cache é usado para tornar disponíveis documentos visitados para navegação "para frente e para trás" (ou
-            back/forward, em Inglês), salvar, ver como fonte, etc. sem exigir uma viagem para o servidor. Também melhora
+            back/forward, em Inglês), salvar, ver como fonte, etc. sem exigir uma viagem para o servidor. Também
+            melhora
             a navegação offline de conteúdo em cache.
         </p>
         <h3>Caches de proxy compartilhada </h3>
         <p class="text-justify">
             Uma cache compartilhada é uma cache que armazena respostas para serem reusadas por mais de um usuário. Por
-            exemplo, um fornecedor de acesso à internet ou sua empresa pode ter definido uma web proxy como parte de sua
+            exemplo, um fornecedor de acesso à internet ou sua empresa pode ter definido uma web proxy como parte de
+            sua
             infraestrutura de rede local para servir muitos usuários para que recursos populares sejam reusados
             numerosas vezes, reduzindo o tráfego de rede e latência.
         </p>
@@ -251,7 +266,8 @@
             Redirecionamento de URL, também conhecido como encaminhamento de URL, é uma técnica que à uma página,
             formulário ou uma aplicação web inteira, mais de um endereço de URL. HTTP fornece uma espécie especial de
             respostas, HTTP redirects, executar esta operação é utilizada para vários objetivos: redirecionamento
-            temporário enquanto está sendo feita a manutenção do web site, redirecionamento permanente para manter links
+            temporário enquanto está sendo feita a manutenção do web site, redirecionamento permanente para manter
+            links
             externos funcionando após alterações na arquitetura do web site, páginas de progresso enquanto é feito o
             envio de um arquivo, e assim por diante.
         </p>
@@ -298,7 +314,8 @@
         <h2 class="text-center"> <a name="security"> Content Security Policy (CSP)</a></h2>
         <p class="text-justify">
             Content Security Policy (Política de Segurança de Conteúdo, também conhecida como CSP) é uma camada
-            adicional de seguranção que facilita a detecção e mitigação de certos tipos de ataques, incluindo Cross Site
+            adicional de seguranção que facilita a detecção e mitigação de certos tipos de ataques, incluindo Cross
+            Site
             Scripting (XSS) e ataques de injeção de dados. Esses ataques são utilizados para diversos fins, e eles vão
             desde roubou de dados até desfiguração do site até distribuição de malware.
         </p>
@@ -320,9 +337,11 @@
             parece que está vindo.
         </p>
         <p class="text-justify">
-            O CSP faz com que seja possível para administradores de servidores reduzirem ou eliminarem os vetores em que
+            O CSP faz com que seja possível para administradores de servidores reduzirem ou eliminarem os vetores em
+            que
             os ataques de XSS podem ocorrer, especificando os domínios que o navegador deve considerar como origens
-            válidas de scripts para serem executados. Um navegador comátivel com o CSP só irá executar então scripts que
+            válidas de scripts para serem executados. Um navegador comátivel com o CSP só irá executar então scripts
+            que
             vierem de arquivos que estejam presentes nos domínios que foram previamente especificados como confiáveis,
             ignorando todos os outros scripts (incluindo scripts inline e atributos HTML de manipulação de eventos).
         </p>
@@ -344,7 +363,8 @@
         <p>
             Configurar uma Política de Segurança de Conteúdo envolve adicionar o header HTTP Content-Security-Policy a
             uma página web e adicionar valores para controlar recursos que o user-agent é habilitado para carregar para
-            aquela página. Por exemplo, uma página que faz o upload e exibe imagens poderia permitir imagens de qualquer
+            aquela página. Por exemplo, uma página que faz o upload e exibe imagens poderia permitir imagens de
+            qualquer
             lugar, mas restringir um form action de um end point específico. Uma política de segurança de conteúdo
             devidamente concebida ajuda a proteger a página contra ataques do tipo cross site scripting.
         </p>
