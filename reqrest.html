@@ -68,6 +68,29 @@
                 </tbody>
             </table>
         </div>
+        <div style="display: none" id="singleUserRender">
+                <table class="mt-5">
+                    <thead>
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Nome
+                            </th>
+                            <th>
+                                Sobreome
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+    
+                    </tbody>
+                </table>
+            </div>
 
         <div class="mt-5" style="display: none" id="erroRender">
             <span id="erro"></span>
@@ -161,7 +184,7 @@
     }
 
     document.getElementById("singleUser").onclick = () => {
-        let div = document.querySelector("#userRender");
+        let div = document.querySelector("#SingleUserRender");
         if (div.style.display == "none") {
             div.style.display = "block";
 
