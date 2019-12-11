@@ -1,3 +1,20 @@
 .navbar{
     background-color: blueviolet !important;
 }
+
+img{
+    height:30px;
+    width: 30px;
+}
+table{
+    width: 500px;
+   
+}
+
+.mt-5, .my-5 {
+    margin-top: 4rem!important;
+}
+#divColor{
+    height:30px;
+    width: 100px;
+}

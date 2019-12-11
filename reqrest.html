@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <title>ReqRest</title>
 </head>
 
-<body>
+<body class="mt-5">
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">ReqRest</a>
@@ -25,22 +25,265 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#HTTP.html">HTTP</a>
+                        <a class="nav-link" href="HTTP.html">HTTP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#HTTP.html">List Users</a>
+                        <button id="userList" class="nav-link bg-transparent">List Users</button>
                     </li>
+                    <li class="nav-item">
+                        <button id="singleUser" class="nav-link bg-transparent">Single User</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="singleUser404" class="nav-link bg-transparent">Single User 404</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="resourseList" class="nav-link bg-transparent">Resourse List</button>
+                    </li>
+
                 </ul>
             </div>
         </nav>
     </header>
     <main>
+        <div style="display: none" id="userRender">
+            <table class="mt-5">
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Sobreome
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-5" style="display: none" id="erroRender">
+            <span id="erro"></span>
+        </div>
+
+        <div style="display: none" id="colorRender">
+            <table class="mt-5">
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Ano
+                        </th>
+                        <th>
+                            Cor
+                        </th>
+                        <th>
+                            Pantone
+                        </th>
+                        <th>
+                            Representação
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody2">
+
+                </tbody>
+            </table>
+        </div>
 
     </main>
 
 </body>
 <script>
-    
+    document.querySelector("#userList").onclick = () => {
+        let div = document.querySelector("#userRender");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = () => {
+
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    let json = JSON.parse(ajax.responseText);
+
+                    let tbody = document.getElementById("tbody");
+                    tbody.innerHTML = null;
+
+
+                    for (let i = 0; i < json.data.length; i++) {
+
+                        let tr1 = document.createElement("tr");
+                        let td1 = document.createElement("td");
+                        let td2 = document.createElement("td");
+                        let td3 = document.createElement("td");
+                        let td4 = document.createElement("td");
+                        let img = document.createElement("img");
+
+
+
+                        tbody.appendChild(tr1);
+                        tr1.appendChild(td1);
+                        tr1.appendChild(td2);
+                        tr1.appendChild(td3);
+                        tr1.appendChild(td4);
+                        tr1.appendChild(img);
+
+                        td1.innerHTML = json.data[i].id;
+                        td2.innerHTML = json.data[i].email;
+                        td3.innerHTML = json.data[i].first_name;
+                        td4.innerHTML = json.data[i].last_name;
+                        img.src = json.data[i].avatar;
+                    }
+
+                }
+
+            }
+            ajax.open("GET", "https://reqres.in/api/users?page=2");
+            ajax.send();
+        }
+        else {
+            div.style.display = "none";
+            tbody.innerHTML = null;
+        }
+    }
+
+    document.getElementById("singleUser").onclick = () => {
+        let div = document.querySelector("#userRender");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = () => {
+
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    let json = JSON.parse(ajax.responseText);
+
+                    let tbody = document.getElementById("tbody");
+                    tbody.innerHTML = null;
+
+                    let tr1 = document.createElement("tr");
+                    let td1 = document.createElement("td");
+                    let td2 = document.createElement("td");
+                    let td3 = document.createElement("td");
+                    let td4 = document.createElement("td");
+                    let img = document.createElement("img");
+
+                    tbody.appendChild(tr1);
+                    tr1.appendChild(td1);
+                    tr1.appendChild(td2);
+                    tr1.appendChild(td3);
+                    tr1.appendChild(td4);
+                    tr1.appendChild(img);
+
+                    td1.innerHTML = json.data.id;
+                    td2.innerHTML = json.data.email;
+                    td3.innerHTML = json.data.first_name;
+                    td4.innerHTML = json.data.last_name;
+                    img.src = json.data.avatar;
+                }
+            }
+            ajax.open("GET", "https://reqres.in/api/users/2");
+            ajax.send();
+        }
+        else {
+            div.style.display = "none";
+            tbody.innerHTML = null;
+        }
+    }
+
+    document.getElementById("singleUser404").onclick = () => {
+        let div = document.querySelector("#erroRender");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = () => {
+
+                let erro = document.getElementById("erro");
+
+                if (ajax.status == 404) {
+                    erro.innerHTML = "Deu Erro!";
+                    
+                } else {
+                    erro.innerHTML = "Deu Certo!";
+                }
+
+            }
+            ajax.open("GET", "https://reqres.in/api/users/23");
+            ajax.send();
+        }
+        else {
+            div.style.display = "none";
+        }
+    }
+
+    document.querySelector("#resourseList").onclick = () => {
+        let div = document.querySelector("#colorRender");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = () => {
+
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    let json = JSON.parse(ajax.responseText);
+
+                    let tbody = document.getElementById("tbody2");
+                    tbody.innerHTML = null;
+
+                    for (let i = 0; i < json.data.length; i++) {
+
+                        let tr1 = document.createElement("tr");
+                        let td1 = document.createElement("td");
+                        let td2 = document.createElement("td");
+                        let td3 = document.createElement("td");
+                        let td4 = document.createElement("td");
+                        let td5 = document.createElement("td");
+                        let divCor = document.createElement("div");
+
+                        tbody.appendChild(tr1);
+                        tr1.appendChild(td1);
+                        tr1.appendChild(td2);
+                        tr1.appendChild(td3);
+                        tr1.appendChild(td4);
+                        tr1.appendChild(td5);
+                        tr1.appendChild(divCor);
+
+                        td1.innerHTML = json.data[i].id;
+                        td2.innerHTML = json.data[i].name;
+                        td3.innerHTML = json.data[i].year;
+                        td4.innerHTML = json.data[i].color;
+                        td5.innerHTML = json.data[i].pantone_value;
+                        divCor.style.backgroundColor = json.data[i].color;
+                        divCor.id = "divColor"
+                    }
+
+                }
+
+            }
+            ajax.open("GET", "https://reqres.in/api/unknown");
+            ajax.send();
+        }
+        else {
+            div.style.display = "none";
+            tbody.innerHTML = null;
+        }
+    }
 </script>
 
 </html>
