@@ -86,7 +86,7 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody id="tbody">
+                    <tbody id="tbody2">
     
                     </tbody>
                 </table>
@@ -120,7 +120,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody id="tbody2">
+                <tbody id="tbody3">
 
                 </tbody>
             </table>
@@ -178,8 +178,7 @@
             ajax.send();
         }
         else {
-            div.style.display = "none";
-            tbody.innerHTML = null;
+            div.style.display = "none";         
         }
     }
 
@@ -195,7 +194,7 @@
                 if (ajax.readyState == 4 && ajax.status == 200) {
                     let json = JSON.parse(ajax.responseText);
 
-                    let tbody = document.getElementById("tbody");
+                    let tbody = document.getElementById("tbody2");
                     tbody.innerHTML = null;
 
                     let tr1 = document.createElement("tr");
@@ -223,8 +222,7 @@
             ajax.send();
         }
         else {
-            div.style.display = "none";
-            tbody.innerHTML = null;
+            div.style.display = "none";            
         }
     }
 
@@ -266,7 +264,7 @@
                 if (ajax.readyState == 4 && ajax.status == 200) {
                     let json = JSON.parse(ajax.responseText);
 
-                    let tbody = document.getElementById("tbody2");
+                    let tbody = document.getElementById("tbody3");
                     tbody.innerHTML = null;
 
                     for (let i = 0; i < json.data.length; i++) {
@@ -303,8 +301,7 @@
             ajax.send();
         }
         else {
-            div.style.display = "none";
-            tbody.innerHTML = null;
+            div.style.display = "none";           
         }
     }
 </script>
