@@ -17,16 +17,13 @@
 <body class="mt-5">
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">ReqRest</a>
+            <a class="navbar-brand" href="HTTP.html">HTTP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="HTTP.html">HTTP</a>
-                    </li>
                     <li class="nav-item">
                         <button id="userList" class="nav-link bg-transparent">List Users</button>
                     </li>
@@ -39,12 +36,30 @@
                     <li class="nav-item">
                         <button id="resourseList" class="nav-link bg-transparent">Resourse List</button>
                     </li>
-
+                    <li class="nav-item">
+                        <button id="singleResourse" class="nav-link bg-transparent">Single Resourse</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="singleResourse404" class="nav-link bg-transparent">Single Resourse 404</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="create" class="nav-link bg-transparent">Create</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="put" class="nav-link bg-transparent">Update PUT</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="patch" class="nav-link bg-transparent">Update Patch</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="delete" class="nav-link bg-transparent">Delete</button>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
+        <h1 class="text-center">Req Rest</h1>
         <div style="display: none" id="userRender">
             <table class="mt-5">
                 <thead>
@@ -69,30 +84,30 @@
             </table>
         </div>
         <div style="display: none" id="singleUserRender">
-                <table class="mt-5">
-                    <thead>
-                        <tr>
-                            <th>
-                                ID
-                            </th>
-                            <th>
-                                Email
-                            </th>
-                            <th>
-                                Nome
-                            </th>
-                            <th>
-                                Sobreome
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody2">
-    
-                    </tbody>
-                </table>
-            </div>
+            <table class="mt-5">
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Sobreome
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody2">
 
-        <div class="mt-5" style="display: none" id="erroRender">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-5" style="display: none" id="erroUserRender">
             <span id="erro"></span>
         </div>
 
@@ -124,6 +139,122 @@
 
                 </tbody>
             </table>
+        </div>
+
+        <div style="display: none" id="singleColorRender">
+            <table class="mt-5">
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Ano
+                        </th>
+                        <th>
+                            Cor
+                        </th>
+                        <th>
+                            Pantone
+                        </th>
+                        <th>
+                            Representação
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody4">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-5" style="display: none" id="erroResourseRender">
+            <span id="erro2"></span>
+        </div>
+
+        <div class="mt-5" style="display: none" id="createRender">
+            <form>
+                <input placeholder="Nome" type="text" name="nome" id="nome">
+                <input placeholder="Emprego" type="text" name="job" id="job">
+                <input id="submit" type="submit"></input>
+            </form>
+            <table class="mt-5 table table-striped ">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Id
+                        </th>
+                        <th scope="col">
+                            Nome
+                        </th>
+                        <th scope="col">
+                            Job
+                        </th>
+                        <th scope="col">
+                            Criado:
+                        </th>
+                    </tr>
+                <tbody id="retorno">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-5" style="display: none" id="upPut">
+            <form>
+                <input placeholder="Nome" type="text" name="nome" id="nome2">
+                <input placeholder="Emprego" type="text" name="job" id="job2">
+                <button id="submit2" type="submit">Atualizar</button>
+            </form>
+            <table class="mt-5 table table-striped ">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Nome
+                        </th>
+                        <th scope="col">
+                            Job
+                        </th>
+                        <th scope="col">
+                            Atualizações:
+                        </th>
+
+                    </tr>
+                <tbody id="retorno2">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-5" style="display: none" id="upPatch">
+            <form>
+                <input placeholder="Nome" type="text" name="nome" id="nome3">
+                <input placeholder="Emprego" type="text" name="job" id="job3">
+                <button id="submit3" type="submit">Atualizar</button>
+            </form>
+            <table class="mt-5 table table-striped ">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Nome
+                        </th>
+                        <th scope="col">
+                            Job
+                        </th>
+                        <th scope="col">
+                            Atualizações:
+                        </th>
+                    </tr>
+                <tbody id="retorno3">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-5" style="display: none" id="deleteRender">
+            <input id="deletado" placeholder="Nome" type="name">
+            <button class="button" id="deleteButton">Delete</button>
+            <div id="retornoDelete"></div>
         </div>
 
     </main>
@@ -178,7 +309,7 @@
             ajax.send();
         }
         else {
-            div.style.display = "none";         
+            div.style.display = "none";
         }
     }
 
@@ -222,12 +353,12 @@
             ajax.send();
         }
         else {
-            div.style.display = "none";            
+            div.style.display = "none";
         }
     }
 
     document.getElementById("singleUser404").onclick = () => {
-        let div = document.querySelector("#erroRender");
+        let div = document.querySelector("#erroUserRender");
         if (div.style.display == "none") {
             div.style.display = "block";
             var ajax = new XMLHttpRequest();
@@ -238,7 +369,7 @@
 
                 if (ajax.status == 404) {
                     erro.innerHTML = "Deu Erro!";
-                    
+
                 } else {
                     erro.innerHTML = "Deu Certo!";
                 }
@@ -301,9 +432,289 @@
             ajax.send();
         }
         else {
-            div.style.display = "none";           
+            div.style.display = "none";
         }
     }
+
+    document.querySelector("#singleResourse").onclick = () => {
+        let div = document.querySelector("#singleColorRender");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = () => {
+
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    let json = JSON.parse(ajax.responseText);
+
+                    let tbody = document.getElementById("tbody4");
+                    tbody.innerHTML = null;
+
+                    let tr1 = document.createElement("tr");
+                    let td1 = document.createElement("td");
+                    let td2 = document.createElement("td");
+                    let td3 = document.createElement("td");
+                    let td4 = document.createElement("td");
+                    let td5 = document.createElement("td");
+                    let divCor = document.createElement("div");
+
+                    tbody.appendChild(tr1);
+                    tr1.appendChild(td1);
+                    tr1.appendChild(td2);
+                    tr1.appendChild(td3);
+                    tr1.appendChild(td4);
+                    tr1.appendChild(td5);
+                    tr1.appendChild(divCor);
+
+                    td1.innerHTML = json.data.id;
+                    td2.innerHTML = json.data.name;
+                    td3.innerHTML = json.data.year;
+                    td4.innerHTML = json.data.color;
+                    td5.innerHTML = json.data.pantone_value;
+                    divCor.style.backgroundColor = json.data.color;
+                    divCor.id = "divColor"
+                }
+            }
+            ajax.open("GET", "https://reqres.in/api/unknown/2");
+            ajax.send();
+        }
+        else {
+            div.style.display = "none";
+        }
+    }
+
+    document.getElementById("singleResourse404").onclick = () => {
+        let div = document.querySelector("#erroResourseRender");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = () => {
+
+                let erro = document.getElementById("erro2");
+
+                if (ajax.status == 404) {
+                    erro.innerHTML = "Deu Erro!";
+
+                } else {
+                    erro.innerHTML = "Deu Certo!";
+                }
+
+            }
+            ajax.open("GET", "https://reqres.in/api/unknown/23");
+            ajax.send();
+        }
+        else {
+            div.style.display = "none";
+        }
+    }
+
+    document.getElementById("create").onclick = () => {
+        let div = document.querySelector("#createRender");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("submit").onclick = (e) => {
+
+                e.preventDefault();
+
+                let ajax = new XMLHttpRequest();
+
+                let nome = document.getElementById("nome").value;
+                let job = document.getElementById("job").value;
+
+
+
+
+                let usuario = { nome: nome, job: job };
+
+                let jsonVai = JSON.stringify(usuario);
+
+                let retorno = document.getElementById("retorno");
+
+                let tr1 = document.createElement("tr");
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+                let td3 = document.createElement("td");
+                let td4 = document.createElement("td");
+
+
+                ajax.onreadystatechange = () => {
+                    if (ajax.readyState == 4 && ajax.status == 201) {
+                        let json = JSON.parse(ajax.responseText);
+
+                        retorno.appendChild(tr1);
+                        tr1.appendChild(td1);
+                        tr1.appendChild(td2);
+                        tr1.appendChild(td3);
+                        tr1.appendChild(td4);
+
+
+                        td1.innerHTML = json.id;
+                        td2.innerHTML = json.nome;
+                        td3.innerHTML = json.job;
+                        td4.innerHTML = json.createdAt;
+
+                    }
+                }
+                ajax.open("POST", "https://reqres.in/api/users");
+                ajax.setRequestHeader("Content-type", "application/json");
+                ajax.send(jsonVai);
+            }
+        }
+        else {
+            div.style.display = "none";
+            retorno.innerHTML = null;
+            nome.value = ""
+            job.value = ""
+        }
+    }
+
+    document.getElementById("put").onclick = () => {
+        let div = document.querySelector("#upPut");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("submit2").onclick = (e) => {
+
+                e.preventDefault();
+
+                let ajax = new XMLHttpRequest();
+
+                let nome = document.getElementById("nome2").value;
+                let job = document.getElementById("job2").value;
+
+
+
+
+                let usuario = { nome: nome, job: job };
+
+                let jsonVai = JSON.stringify(usuario);
+
+                let retorno = document.getElementById("retorno2");
+
+                let tr1 = document.createElement("tr");
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+                let td3 = document.createElement("td");
+
+
+
+                ajax.onreadystatechange = () => {
+                    if (ajax.readyState == 4 && ajax.status == 200) {
+                        let json = JSON.parse(ajax.responseText);
+                        console.log(json);
+
+                        retorno.appendChild(tr1);
+                        tr1.appendChild(td1);
+                        tr1.appendChild(td2);
+                        tr1.appendChild(td3);
+
+
+
+
+                        td1.innerHTML = json.nome;
+                        td2.innerHTML = json.job;
+                        td3.innerHTML = json.updatedAt;
+
+                    }
+                }
+                ajax.open("PUT", "https://reqres.in/api/users/2");
+                ajax.setRequestHeader("Content-type", "application/json");
+                ajax.send(jsonVai);
+            }
+        }
+        else {
+            div.style.display = "none";
+            retorno.innerHTML = null;
+        }
+    }
+
+    document.getElementById("patch").onclick = () => {
+        let div = document.querySelector("#upPatch");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+            document.getElementById("submit3").onclick = (e) => {
+
+                e.preventDefault();
+
+                let ajax = new XMLHttpRequest();
+
+                let nome = document.getElementById("nome3").value;
+                let job = document.getElementById("job3").value;
+
+
+                let usuario = { nome: nome, job: job };
+
+                let jsonVai = JSON.stringify(usuario);
+
+                let retorno = document.getElementById("retorno3");
+
+                let tr1 = document.createElement("tr");
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+                let td3 = document.createElement("td");
+
+
+
+                ajax.onreadystatechange = () => {
+                    if (ajax.readyState == 4 && ajax.status == 200) {
+                        let json = JSON.parse(ajax.responseText);
+                        console.log(json);
+
+                        retorno.appendChild(tr1);
+                        tr1.appendChild(td1);
+                        tr1.appendChild(td2);
+                        tr1.appendChild(td3);
+
+                        td1.innerHTML = json.nome;
+                        td2.innerHTML = json.job;
+                        td3.innerHTML = json.updatedAt;
+
+                    }
+                }
+                ajax.open("PATCH", "https://reqres.in/api/users/2");
+                ajax.setRequestHeader("Content-type", "application/json");
+                ajax.send(jsonVai);
+            }
+        }
+        else {
+            div.style.display = "none";
+            retorno.innerHTML = null;
+        }
+    }
+
+    document.getElementById("delete").onclick = () => {
+        let div = document.getElementById("deleteRender");
+        if (div.style.display == "none") {
+            div.style.display = "block";
+
+            let button = document.getElementById("deleteButton").onclick = () => {
+                var ajax = new XMLHttpRequest();
+
+                let nome = document.getElementById("deletado").value;
+
+                let tchau = {nome: nome};
+
+                let json = JSON.stringify(tchau);
+
+                ajax.onreadystatechange = () => {
+
+                    let retorno = document.getElementById("retornoDelete");
+
+                    if (ajax.status == 204) {
+                        retorno.innerHTML = "Deletado Com Sucesso!";
+                    }
+                }
+                ajax.open("DELETE", "https://reqres.in/api/users/2");                
+                ajax.setRequestHeader("Content-type", "application/json");
+                ajax.send(json);
+            }
+        }
+        else {
+            div.style.display = "none";
+        }
+    }
+
 </script>
 
 </html>

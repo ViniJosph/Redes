@@ -9,22 +9,20 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="estilo.css">
     <title>HTTP</title>
 </head>
 
 <body class="mt-5">
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">O que é HTTP?</a>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">            
+            <a class="navbar-brand" href="reqrest.html">ReqRest</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="reqrest.html">ReqRest</a>
-                    </li>
+                <ul class="navbar-nav mr-auto">                  
                     <li class="nav-item">
                         <a class="nav-link" href="#componente">Componentes</a>
                     </li>
@@ -54,6 +52,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#security">CSP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#httpxhttps">Http vs Https</a>
                     </li>
                 </ul>
             </div>
@@ -368,7 +369,17 @@
             lugar, mas restringir um form action de um end point específico. Uma política de segurança de conteúdo
             devidamente concebida ajuda a proteger a página contra ataques do tipo cross site scripting.
         </p>
-
+        <h2 class="text-center"> <a name="httpxhttps">HTTP VS HTTPS</a></h2>
+        <p>
+            Hypertext Transfer Protocol Secure, ou simplesmente HTTPS, é uma versão idêntica do protocolo HTTP sobre uma
+            camada SSL. Essa camada adicional permite que os dados sejam transmitidos através de uma conexão
+            criptografada e que se verifique a autenticidade do servidor e do cliente através de certificados digitais.
+            A porta TCP usada por norma para o protocolo HTTPS é a 443.
+        </p>
+        <p>
+            O HTTP não envia estas informações criptografadas, portanto, qualquer monitorador de rede pode identificar
+            os dados que transitam entre seu computador e o servidor web, o que não ocorre com o HTTPS.
+        </p>
     </main>
 </body>
 
